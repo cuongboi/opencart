@@ -5707,6 +5707,11 @@ function db_schema() {
 				'name' => 'sort_order',
 				'type' => 'int(3)',
 				'not_null' => true
+			),
+			array(
+				'name' => 'status',
+				'type' => 'int(1)',
+				'not_null' => true
 			)
 		),
 		'primary' => array(

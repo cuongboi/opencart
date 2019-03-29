@@ -12,14 +12,12 @@ $_['text_edit']         = 'Edit SEO Regular Expression';
 $_['column_name']       = 'Regex Name';
 $_['column_regex']      = 'Regex';
 $_['column_sort_order'] = 'Sort Order';
-$_['column_status']     = 'Status';
 $_['column_action']     = 'Action';
 
 // Entry
 $_['entry_name']        = 'Regex Name';
 $_['entry_regex']       = 'Regex';
 $_['entry_sort_order']  = 'Sort Order';
-$_['entry_status']      = 'Status';
 
 // Help
 $_['help_regex']        = 'Regular expression to match the parts of the URL.';

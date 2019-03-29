@@ -36,7 +36,6 @@
                   <td class="text-left">{% if sort == 'name' %}<a href="{{ sort_name }}" class="{{ order|lower }}">{{ column_name }}</a>{% else %}<a href="{{ sort_name }}">{{ column_name }}</a>{% endif %}</td>
                   <td class="text-left">{% if sort == 'regex' %}<a href="{{ sort_regex }}" class="{{ order|lower }}">{{ column_regex }}</a>{% else %}<a href="{{ sort_regex }}">{{ column_regex }}</a>{% endif %}</td>
                   <td class="text-right">{% if sort == 'sort_order' %}<a href="{{ sort_sort_order }}" class="{{ order|lower }}">{{ column_sort_order }}</a>{% else %}<a href="{{ sort_sort_order }}">{{ column_sort_order }}</a>{% endif %}</td>
-                  <td class="text-right">{% if sort == 'status' %}<a href="{{ sort_status }}" class="{{ order|lower }}">{{ column_status }}</a>{% else %}<a href="{{ sort_status }}">{{ column_status }}</a>{% endif %}</td>
                   <td class="text-right">{{ column_action }}</td>
                 </tr>
               </thead>
@@ -52,7 +51,6 @@
                       <td class="text-left">{{ seo_regex.name }}</td>
                       <td class="text-left">{{ seo_regex.regex }}</td>
                       <td class="text-right">{{ seo_regex.sort_order }}</td>
-                      <td class="text-right">{% if seo_regex.status %}{{ text_enabled }} {% else %} {{ text_disabled }} {% endif %}</td>
                       <td class="text-right"><a href="{{ seo_regex.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a></td>
                     </tr>
                   {% endfor %}

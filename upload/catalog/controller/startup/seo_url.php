@@ -53,19 +53,6 @@ class ControllerStartupSeoUrl extends Controller {
 			if (preg_match('/' . $result['regex'] . '/', $url_info['query'], $matches)) {
 				array_shift($matches);
 
-				if(!$result['status']) {
-					$remove = array(); 
-					foreach($matches as $match) {
-						parse_str($match, $remove);
-						foreach (array_keys($remove) as $key) {
-							if (isset($data[$key])) {
-								unset($data[$key]);
-							}
-						}
-					}
-					continue;
-				}
-
 				foreach ($matches as $match) {
 					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "seo_url WHERE `query` = '" . $this->db->escape($match) . "' AND store_id = '" . (int)$this->config->get('config_store_id') . "' AND language_id = '" . (int)$this->config->get('config_language_id') . "'");
 
@@ -90,9 +77,6 @@ class ControllerStartupSeoUrl extends Controller {
 		}
 
 		if ($url) {
-
-			$url = str_replace("//", "", $url);
-
 			$query = '';
 
 			if ($data) {

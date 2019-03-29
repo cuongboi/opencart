@@ -1,11 +1,11 @@
 <?php
 class ModelDesignSeoRegex extends Model {
 	public function addSeoRegex($data) {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "seo_regex` SET `name` = '" . $this->db->escape((string)$data['name']) . "', `regex` = '" . $this->db->escape(html_entity_decode((string)$data['regex'], ENT_QUOTES, 'UTF-8')) . "', `sort_order` = '" . (int)$data['sort_order'] . "', `status` = '" . (int)$data['status'] . "'");
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "seo_regex` SET `name` = '" . $this->db->escape((string)$data['name']) . "', `regex` = '" . $this->db->escape(html_entity_decode((string)$data['regex'], ENT_QUOTES, 'UTF-8')) . "', `sort_order` = '" . (int)$data['sort_order'] . "'");
 	}
 
 	public function editSeoRegex($seo_regex_id, $data) {
-		$this->db->query("UPDATE `" . DB_PREFIX . "seo_regex` SET `name` = '" . $this->db->escape((string)$data['name']) . "', `regex` = '" . $this->db->escape(html_entity_decode((string)$data['regex'], ENT_QUOTES, 'UTF-8')) . "', `sort_order` = '" . (int)$data['sort_order'] . "', `status` = '" . (int)$data['status'] . "' WHERE `seo_regex_id` = '" . (int)$seo_regex_id . "'");
+		$this->db->query("UPDATE `" . DB_PREFIX . "seo_regex` SET `name` = '" . $this->db->escape((string)$data['name']) . "', `regex` = '" . $this->db->escape(html_entity_decode((string)$data['regex'], ENT_QUOTES, 'UTF-8')) . "', `sort_order` = '" . (int)$data['sort_order'] . "' WHERE `seo_regex_id` = '" . (int)$seo_regex_id . "'");
 	}
 
 	public function deleteSeoRegex($seo_regex_id) {
@@ -24,8 +24,7 @@ class ModelDesignSeoRegex extends Model {
 		$sort_data = array(
 			'name',
 			'regex',
-			'sort_order', 
-			'status'
+			'sort_order'
 		);
 
 		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {

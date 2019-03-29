@@ -59,7 +59,8 @@
 .swiper-button-prev:before {
 	width: 40px;
     height: 40px;
-	font-family: 'Font Awesome 5 Solid';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
 	content: '\f053';
 	color: rgba(0,0,0,0.8);
 	font-size: 40px;
@@ -68,6 +69,7 @@
 	width: 40px;
     height: 40px;
 	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
 	content: '\f054';
 	color: rgba(0,0,0,0.8);
 	font-size: 40px;

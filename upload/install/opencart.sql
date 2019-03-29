@@ -1791,7 +1791,7 @@ INSERT INTO `oc_seo_regex` (`name`, `regex`, `sort_order`, `status`) VALUES
 ('Category Level 3', '(path=\\d+_\\d+_\\d+)(?:[_&]|$)', 3, 1),
 ('Information', '(information_id=\\d+)(?:[&]|$)', 1, 1),
 ('Manufacturer', '(manufacturer_id=\\d+)(?:[&]|$)', 2, 1),
-('Language', '(language=[a-z-]+)(?:[&]|$)', -1, 1),
+('Language', '(language=[a-z-]+)(?:[&]|$)', -1, 0),
 ('Route', '(route=[a-zA-Z0-9\\/]+)(?:[&]|$)', 0, 1),
 ('Category Level 4', '(path=\\d+_\\d+_\\d+_\\d+)(?:[_&]|$)', 4, 1),
 ('Category Level 5', '(path=\\d+_\\d+_\\d+_\\d+_\\d+)(?:[_&]|$)', 5, 1),

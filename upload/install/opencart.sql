@@ -853,7 +853,8 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 (39, 'report', 'customer_activity'),
 (40, 'report', 'customer_order'),
 (41, 'report', 'customer_reward'),
-(42, 'currency', 'fixer');
+(42, 'currency', 'fixer'),
+(43, 'module', 'featured_category');
 
 -----------------------------------------------------------
 
@@ -948,7 +949,8 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (66, 1, 'slideshow.27', 'content_top', 1),
 (65, 1, 'featured.28', 'content_top', 2),
 (72, 3, 'category', 'column_left', 1),
-(73, 3, 'banner.30', 'column_left', 2);
+(73, 3, 'banner.30', 'column_left', 2),
+(74, 1, 'featured_category.32', 'content_top', 2);
 
 -----------------------------------------------------------
 
@@ -1033,7 +1035,8 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (29, 'Home Page', 'carousel', '{"name":"Home Page","banner_id":"8","width":"130","height":"100","status":"1"}'),
 (28, 'Home Page', 'featured', '{"name":"Home Page","product":["43","40","42","30"],"limit":"4","width":"200","height":"200","status":"1"}'),
 (27, 'Home Page', 'slideshow', '{"name":"Home Page","banner_id":"7","width":"1140","height":"380","status":"1"}'),
-(31, 'Banner 1', 'banner', '{"name":"Banner 1","banner_id":"6","width":"182","height":"182","status":"1"}');
+(31, 'Banner 1', 'banner', '{"name":"Banner 1","banner_id":"6","width":"182","height":"182","status":"1"}'),
+(32, 'Home Page Featured Category', 'featured_category', '{\"name\":\"Home Page Featured Category\",\"display_name\":\"&lt;center&gt;The Electronics&lt;\\/center&gt;\",\"category_name\":\"\",\"category\":[\"20\",\"24\",\"33\"],\"limit\":\"8\",\"width\":\"200\",\"height\":\"200\",\"status\":\"1\"}');
 
 -----------------------------------------------------------
 

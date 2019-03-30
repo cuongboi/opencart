@@ -67,6 +67,34 @@ class ControllerCommonFooter extends Controller {
 
 		$data['scripts'] = $this->document->getScripts('footer');
 
+		// Debug Bar 
+
+		if($this->config->get('config_debug_bar')) {
+			// Add Style And Script Of Debug Bar
+			$this->document->addStyle('catalog/view/javascript/debugbar/vendor/font-awesome/css/font-awesome.min.css');
+			$this->document->addStyle('catalog/view/javascript/debugbar/vendor/highlightjs/styles/sunburst.css');
+			$this->document->addStyle('catalog/view/javascript/debugbar/debugbar.css');
+			$this->document->addStyle('catalog/view/javascript/debugbar/widgets.css');
+			$this->document->addStyle('catalog/view/javascript/debugbar/openhandler.css');
+			$this->document->addScript('catalog/view/javascript/debugbar/vendor/highlightjs/highlight.pack.js');
+			$this->document->addScript('catalog/view/javascript/debugbar/debugbar.js');
+			$this->document->addScript('catalog/view/javascript/debugbar/widgets.js');
+			$this->document->addScript('catalog/view/javascript/debugbar/openhandler.js');
+
+			$debugbar = new DebugBar\StandardDebugBar();
+
+			$query_collector = new Debugdb($this->db->queries());
+
+			$this->document->addStyle($query_collector->getStyle());
+			$this->document->addScript($query_collector->getScript());
+			
+			$debugbar->addCollector($query_collector);
+
+			$debugbarRenderer = $debugbar->getJavascriptRenderer();
+			
+			$data['debugbar'] = $debugbarRenderer->render();
+		}
+
 		return $this->load->view('common/footer', $data);
 	}
 }

@@ -1,8 +1,8 @@
 <h3>{{ heading_title }}</h3>
-  <div class="featured_category_controls controls">
+  <div class="featured-category-controls controls">
   <ul class="nav justify-content-center">
       <li class="nav-item">
-        <a class="nav-link active filter{{module}}" data-filter="all" href="javascript:void(0);"><strong>All</strong></a>
+        <a class="nav-link active filter{{module}}" data-filter="all" href="javascript:void(0);"><strong>{{ text_all }}</strong></a>
       </li>
     {% for category in categories %}
       <li class="nav-item">
@@ -52,19 +52,21 @@
     </div>
   {% endfor %}
 </div>
+{% if not module %}
 <style>
+.featured-category-controls a:focus {
+  color: #176887;
+}
 [data-bound] {
   display: none;
 }
 </style>
+{% endif %}
 <script type="text/javascript">
 $(document).ready(function(){
     $('#featured_category{{module}}').mixItUp({
     selectors: {
       filter: '.filter{{module}}'
-    }, 
-    animation: {
-       effects: 'fade scale stagger(50ms)' 
     }
   });
 });

@@ -12,7 +12,7 @@
 */
 class DB {
 	private $adaptor;
-
+	private $queries = array();
 	/**
 	 * Constructor
 	 *
@@ -42,8 +42,25 @@ class DB {
 	 * @return	array
      */
 	public function query($sql) {
-		return $this->adaptor->query($sql);
+		$start = (float)microtime();
+		$query = $this->adaptor->query($sql);
+		$end   = (float)microtime();
+		
+		$this->queries[] = array(
+			'query'		=> $sql ,
+			'duration'  => $end- $start
+		);
+		return $query;
 	}
+	
+	/**
+	 * 
+	 * @return	array
+     */
+	public function queries() {
+		return $this->queries;
+	}
+	
 
 	/**
      * 

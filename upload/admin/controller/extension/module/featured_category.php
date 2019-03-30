@@ -123,6 +123,14 @@ class ControllerExtensionModuleFeaturedCategory extends Controller {
 			}
 		}
 
+		if (isset($this->request->post['sub_category'])) {
+			$data['sub_category'] = $this->request->post['sub_category'];
+		} elseif (isset($module_info['sub_category'])) {
+			$data['sub_category'] = $module_info['sub_category'];
+		} else {
+			$data['sub_category'] = 0;
+		}
+
 		if (isset($this->request->post['limit'])) {
 			$data['limit'] = $this->request->post['limit'];
 		} elseif (!empty($module_info)) {

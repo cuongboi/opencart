@@ -2,6 +2,8 @@
 class ControllerExtensionModuleFeaturedCategory extends Controller {
 	public function index($setting) {
 		static $module = 0;
+
+		$this->load->language('extension/module/featured_category');
 		$this->load->model('extension/module/featured_category');
 		$this->load->model('tool/image');
 
@@ -21,7 +23,7 @@ class ControllerExtensionModuleFeaturedCategory extends Controller {
 
 			$filter = array(
 				'filter_category_id' 	=> $setting['category'], 
-				'filter_sub_category' 	=> isset($setting['sub_category']) ? $setting['sub_category'] : 0,
+				'filter_sub_category' 	=> $setting['sub_category'],
 				'limit'					=> $setting['limit']
 			);
 

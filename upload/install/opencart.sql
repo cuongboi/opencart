@@ -1787,20 +1787,20 @@ INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`
 --
 
 INSERT INTO `oc_seo_regex` (`name`, `regex`, `sort_order`, `status`) VALUES
-	(1, 'Product', '(product_id=\\d+)(?:[&]|$)', 100, 1),
-	(2, 'Category Level 1', '(path=\\d+)(?:[_&]|$)', 1, 1),
-	(3, 'Category Level 2', '(path=\\d+_\\d+)(?:[_&]|$)', 2, 1),
-	(4, 'Category Level 3', '(path=\\d+_\\d+_\\d+)(?:[_&]|$)', 3, 1),
-	(5, 'Information', '(information_id=\\d+)(?:[&]|$)', 1, 1),
-	(6, 'Manufacturer', '(manufacturer_id=\\d+)(?:[&]|$)', 2, 1),
-	(7, 'Language', '(language=[a-z-]+)(?:[&]|$)', -1, 0),
-	(8, 'Route', '(route=[a-zA-Z0-9\\/]+)(?:[&]|$)', 0, 1),
-	(9, 'Category Level 4', '(path=\\d+_\\d+_\\d+_\\d+)(?:[_&]|$)', 4, 1),
-	(10, 'Category Level 5', '(path=\\d+_\\d+_\\d+_\\d+_\\d+)(?:[_&]|$)', 5, 1),
-	(11, 'Manufacturer', '(manufacturer_id=)', 1, 1),
-	(12, 'Information', '(information_id=)', 1, 1),
-	(13, 'Category', '(path=)', 1, 1),
-	(14, 'Product', '(product_id=)', 99, 1);
+	('Product', '(product_id=\\d+)(?:[&]|$)', 100, 1),
+	('Category Level 1', '(path=\\d+)(?:[_&]|$)', 1, 1),
+	('Category Level 2', '(path=\\d+_\\d+)(?:[_&]|$)', 2, 1),
+	('Category Level 3', '(path=\\d+_\\d+_\\d+)(?:[_&]|$)', 3, 1),
+	('Information', '(information_id=\\d+)(?:[&]|$)', 1, 1),
+	('Manufacturer', '(manufacturer_id=\\d+)(?:[&]|$)', 2, 1),
+	('Language', '(language=[a-z-]+)(?:[&]|$)', -1, 0),
+	('Route', '(route=[a-zA-Z0-9\\/]+)(?:[&]|$)', 0, 1),
+	('Category Level 4', '(path=\\d+_\\d+_\\d+_\\d+)(?:[_&]|$)', 4, 1),
+	('Category Level 5', '(path=\\d+_\\d+_\\d+_\\d+_\\d+)(?:[_&]|$)', 5, 1),
+	('Manufacturer', '(manufacturer_id=)', 1, 1),
+	('Information', '(information_id=)', 1, 1),
+	('Category', '(path=)', 1, 1),
+	('Product', '(product_id=)', 99, 1);
 
 -----------------------------------------------------------
 

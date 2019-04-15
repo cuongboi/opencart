@@ -106,6 +106,7 @@ class Response {
 	 * 
  	*/
 	public function output() {
+		$this->parseScript();
 		if ($this->output) {
 			$output = $this->level ? $this->compress($this->output, $this->level) : $this->output;
 			
@@ -116,6 +117,45 @@ class Response {
 			}
 			
 			echo $output;
+		}
+	}
+
+	/**
+	* 
+	*/
+	protected function parseScript() {
+
+		$page_scripts = ''; 
+
+		preg_match_all('/<script\b[^>]*>(.*?)<\/script>/is', $this->output, $matches); 
+
+		$search = array(
+			'/<script\b[^>]*>(.*?)<\/script>/is',
+			'/\>[^\S ]+/s',     
+			'/[^\S ]+\</s',     
+			'/(\s)+/s',  			
+			'/<!--(.|\s)*?-->/' 
+		);
+		$replace = array(
+			'',
+			'>',
+			'<',
+			'\\1',
+			''
+		);
+		
+		$this->output = preg_replace($search, $replace,  $this->output);
+
+		if(isset($matches[0])) {
+			$page_scripts = implode(PHP_EOL, $matches[0]); 
+		}
+
+		if(preg_match('/<\/footer>/', $this->output)) { 
+			$this->output = preg_replace('/(<\/footer>)/', '$1' . $page_scripts, $this->output);
+		} elseif(preg_match('/<\/body>/', $this->output)) {
+			$this->output = preg_replace('/(<\/body>)/', $page_scripts . '$1' , $this->output);
+		} else {
+			$this->output .=  $page_scripts;
 		}
 	}
 }
